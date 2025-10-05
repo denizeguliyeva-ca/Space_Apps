@@ -1,0 +1,52 @@
+:root {
+    --bg: #0b1020;
+    --card: #0f1530;
+    --text: #e7ecff;
+    --muted: #9bb3ff;
+    --border: #1b2446;
+}
+* {
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    background: radial-gradient(100% 100% at 50% 0%, #0f1530, #070a14 70%);
+    color: var(--text);
+    font:
+        14px/1.4 system-ui,
+        Segoe UI,
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+}
+header {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+h1 {
+    margin: 0;
+    font-size: 22px;
+}
+main {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+.three-wrap {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+.manage {
+    position: absolute;
+    bottom: 20;
+    left: 0;
+}

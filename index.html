@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.png" />
+        <title>Asteroid Impact Lab</title>
+
+        <link rel="stylesheet" href="/styles.css" />
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+                    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <!--<header>
+            <h1>Asteroid Impact Lab</h1>
+        </header>-->
+        <main>
+            <section></section>
+            <section class="viz">
+                <div class="three-wrap">
+                    <canvas id="three"></canvas>
+
+                    <div id="ui">
+                          <label><input id="tgl-orbit" type="checkbox" checked> Orbit</label>
+                          <label><input id="tgl-neos"  type="checkbox" checked> NEOs</label>
+                          <label><input id="tgl-stars" type="checkbox" checked> Stars</label>
+                          <label><input id="tgl-planets" type="checkbox" checked> Planets</label>
+                          <label><input id="tgl-porbits" type="checkbox" checked> Planet Orbits</label>
+
+                        </div>
+                        <style>
+                          #ui{
+                            position: fixed; top:12px; left:12px; z-index: 10;
+                            background: rgba(15,17,28,.75);
+                            padding: 10px 12px; border-radius: 10px;
+                            font: 14px/1.2 system-ui, sans-serif; color:#fff;
+                            backdrop-filter: blur(6px);
+                            box-shadow: 0 6px 20px rgba(0,0,0,.25);
+                            display:flex; flex-direction:column; gap:6px;
+                            user-select:none;
+                          }
+                          #ui label{ display:flex; align-items:center; gap:8px; white-space:nowrap; }
+                          #ui input{ width:16px; height:16px; }
+                        </style>
+                </div>
+            </section>
+        </main>
+
+        <!--
+  <main class="grid">
+    <section class="panel">
+      <h2>NEO & Scenario</h2>
+      <div style="display:flex;gap:6px;margin-bottom:6px;">
+        <input id="neoSearch" placeholder="Filter list by name..." style="flex:1;" />
+        <button id="browseBtn">Browse NASA</button>
+      </div>
+      <div id="neoList" class="list"></div>
+      <div style="display:flex; gap:8px; margin-top:6px;">
+        <button id="loadDemoBtn">Load Impactor-2025 (demo)</button>
+      </div>
+      <div id="neoMeta" class="note" style="margin-top:8px;">No NEO loaded yet.</div>
+    </section>
+
+    <section class="panel">
+      <h2>Inputs</h2>
+      <label>Diameter (m)
+        <input id="diameter" type="number" min="10" max="3000" step="1" value="120" />
+      </label>
+      <label>Speed (km/s)
+        <input id="speed" type="number" min="5" max="72" step="0.5" value="18" />
+      </label>
+      <label>Density (kg/m³)
+        <input id="density" type="number" step="10" value="3000" />
+      </label>
+      <label>Impact Angle (°)
+        <input id="angle" type="number" min="15" max="90" step="1" value="45" />
+      </label>
+
+      <h3>Mitigation — Kinetic Impactor</h3>
+      <label>Impactor mass (kg)
+        <input id="impMass" type="number" value="1000" />
+      </label>
+      <label>Impactor speed (km/s)
+        <input id="impVel" type="number" value="10" step="0.1" />
+      </label>
+      <label>Momentum enhancement β
+        <input id="beta" type="number" value="1.5" step="0.1" />
+      </label>
+
+      <h3>Mitigation — Gravity Tractor</h3>
+      <label>Tractor mass (kg)
+        <input id="tractorMass" type="number" value="2000" />
+      </label>
+      <label>Stand-off (m)
+        <input id="standOff" type="number" value="500" />
+      </label>
+      <label>Tug duration (days)
+        <input id="tugDays" type="number" value="180" />
+      </label>
+
+      <button id="estimateBtn">Estimate</button>
+      <div class="note">Set <code>NASA_API_KEY</code> in your environment to use NASA endpoints.</div>
+    </section>
+
+    <section class="viz">
+      <div class="three-wrap"><canvas id="three"></canvas></div>
+      <div id="metrics" class="metrics"></div>
+    </section>
+
+    <section class="map-panel">
+      <div id="map"></div>
+      <div class="map-note">Click map to set a hypothetical impact point. Basemap © OpenStreetMap.</div>
+
+      <div class="panel" style="margin-top:8px;">
+        <h2>Defend Earth — Gamification</h2>
+        <label>Enable game mode
+          <input id="gameEnabled" type="checkbox" />
+        </label>
+
+        <label>Mission
+          <select id="missionSelect">
+            <option value="easy">Easy — City Saver</option>
+            <option value="std" selected>Standard — Country Saver</option>
+            <option value="hard">Hard — Planet Saver</option>
+          </select>
+        </label>
+
+        <label>Intercept time (days before encounter)
+          <input id="interceptDays" type="number" min="10" step="10" value="180" />
+        </label>
+        <div class="note">Toy rule: required Δv ≈ Earth radius / time to intercept.</div>
+        <div id="gameStatus" class="metrics" style="min-height: 90px;"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© Asteroid Impact Lab — Pro</div>
+    <div class="right"><a href="https://api.nasa.gov/" target="_blank" rel="noreferrer">NASA APIs</a> · <a href="https://www.usgs.gov/" target="_blank" rel="noreferrer">USGS</a></div>
+  </footer> -->
+
+        <!--<script src="/static/vendor/three.min.js"></script>-->
+        <script type="module" src="/app.js"></script>
+    </body>
+</html>
